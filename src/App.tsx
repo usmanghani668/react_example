@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AdminRoutes } from "./routes/AdminRoutes";
+import { AdminRoutes } from "./routes/adminRoutes";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import { useSelector } from "react-redux";

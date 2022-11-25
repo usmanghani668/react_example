@@ -21,3 +21,4 @@ export const INVALID_EMAIL_ERROR =
 export const INVALID_CREDIANTIALS = "Invalid Credentials";
 export const INVALID_USERNAME =
   "Username should not be empty and Password length should be more then 8 characters.";
+export const NOT_FOUND_ERROR = "Oops... Page Not Found!";

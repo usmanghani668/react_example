@@ -5,7 +5,7 @@ import { decrement, increment } from "../../../redux/slices/example";
 import { DECREMENT_LABEL, INCREMENT_LABEL } from "../../../utils/Constants";
 import { RootState } from "../../../redux/store";
 
-const MemberDashboard = () => {
+const MemberDashboardComponent = () => {
   const count = useSelector((state: RootState) => state.example?.value);
   const dispatch = useDispatch();
   return (
@@ -29,4 +29,4 @@ const MemberDashboard = () => {
   );
 };
 
-export default MemberDashboard;
+export default MemberDashboardComponent;

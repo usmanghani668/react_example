@@ -55,8 +55,10 @@ const LoginComponent = () => {
     }
   };
   return (
-    <div className="container">
-      <h2>{SIGNIN_LABEL}</h2>
+    <div className="container row">
+      <div className="row">
+        <h2>{SIGNIN_LABEL}</h2>
+      </div>
       <Form className="form">
         <FormGroup>
           <Label>{USERNAME_LABEL}</Label>
@@ -81,12 +83,14 @@ const LoginComponent = () => {
             onChange={(e) => handlePassword(e)}
           />
         </FormGroup>{" "}
-        {error && <p className="error">{INVALID_CREDIANTIALS}</p>}
-        <Button onClick={handleSubmit}>{SIGNIN_LABEL}</Button>
-        <Button onClick={() => navigate("/register")} className="signup">
-          {SIGNUP_LABEL}
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button onClick={handleSubmit}>{SIGNIN_LABEL}</Button>
+          <Button onClick={() => navigate("/register")} className="signup">
+            {SIGNUP_LABEL}
+          </Button>
+        </div>
       </Form>
+      {error && <p className="error">{INVALID_CREDIANTIALS}</p>}
     </div>
   );
 };
