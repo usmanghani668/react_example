@@ -1,8 +1,9 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import AdminLayout from "../layout/admin";
-import AdminDashboard from "../views/admin/dashboard";
-import { ProtectedRoute } from "./protectedRoute";
+import NotFoundComponent from "../components/NotFound";
+import AdminLayout from "../layout/AdminLayout";
+import AdminDashboard from "../pages/Admin/Dashboard";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export const AdminRoutes = (user: string) => {
   return (
@@ -13,7 +14,9 @@ export const AdminRoutes = (user: string) => {
         </ProtectedRoute>
       }
     >
+      {/* add admin routes here */}
       <Route element={<AdminDashboard />} path={"/dashboard"} />
+      <Route path="*" element={<NotFoundComponent />} />
     </Route>
   );
 };

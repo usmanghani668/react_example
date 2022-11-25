@@ -1,8 +1,8 @@
 import React from "react";
-import { EXAMPLE_LABEL } from "../../../utils/Constants";
+import { EXAMPLE_LABEL } from "../../utils/Constants";
 import "./index.css";
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
     <footer className="footer">
       <div className="footer-copyright text-center py-3">
@@ -13,4 +13,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import { EXAMPLE_LABEL, LOGOUT_LABEL } from "../../../utils/Constants";
+import { EXAMPLE_LABEL, LOGOUT_LABEL } from "../../utils/Constants";
 
-const Header = () => {
+const HeaderComponent = () => {
   const navigate = useNavigate();
 
   return (
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderComponent;

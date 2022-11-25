@@ -8,55 +8,50 @@ import {
   Button,
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import "./index.css";
+
+import "../../pages/Login/index.css";
 import {
-  USERNAME_LABEL,
-  PASSWORD_LABEL,
-  SIGNIN_LABEL,
-  SIGNUP_LABEL,
   INVALID_EMAIL_ERROR,
+  INVALID_USERNAME,
+  PASSWORD_LABEL,
+  SIGNUP_LABEL,
+  SIGNUP_SUCCESS_MESSAGE,
+  SUBMIT_LABEL,
+  USERNAME_LABEL,
   VALID_EMAIL_MESSAGE,
-  INVALID_CREDIANTIALS,
 } from "../../utils/Constants";
 
-import loginData from "../../utils/login.json";
-import { setUser } from "../../redux/slices/example";
-
-const Login = () => {
+const SignUpComponent = () => {
   const navigate = useNavigate();
-  const [inputUsername, setInputUsername] = useState("");
-  const [inputPassword, setInputPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const dispatch = useDispatch();
+  const [success, setSuccess] = useState(false);
 
   const handleUsername = (e: SyntheticEvent<EventTarget>) => {
-    setInputUsername((e.target as HTMLInputElement).value);
+    setUsername((e.target as HTMLInputElement).value);
   };
   const handlePassword = (e: SyntheticEvent<EventTarget>) => {
-    setInputPassword((e.target as HTMLInputElement).value);
+    setPassword((e.target as HTMLInputElement).value);
   };
   const handleSubmit = () => {
     setError(false);
-    const { users } = loginData;
-    const user = users.find(
-      ({ user, password }) =>
-        user === inputUsername && password === inputPassword
-    );
-    if (user) {
-      dispatch(setUser(user.user));
-      navigate("/dashboard", {
-        state: {
-          role: user.role,
-        },
-      });
-    } else {
+    if (username === "" || password.length < 8) {
       setError(true);
+      return;
     }
+    setSuccess(true);
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
   };
+
   return (
-    <div className="container">
-      <h2>{SIGNIN_LABEL}</h2>
+    <div className="container row">
+      <div className="row">
+        <h2>{SIGNUP_LABEL}</h2>
+      </div>
+
       <Form className="form">
         <FormGroup>
           <Label>{USERNAME_LABEL}</Label>
@@ -65,7 +60,7 @@ const Login = () => {
             name="email"
             id="exampleEmail"
             placeholder="Enter Username"
-            value={inputUsername}
+            value={username}
             onChange={(e) => handleUsername(e)}
           />
           <FormFeedback>{INVALID_EMAIL_ERROR}</FormFeedback>
@@ -77,18 +72,20 @@ const Login = () => {
             type="password"
             name="password"
             placeholder="********"
-            value={inputPassword}
+            value={password}
             onChange={(e) => handlePassword(e)}
           />
         </FormGroup>{" "}
-        {error && <p className="error">{INVALID_CREDIANTIALS}</p>}
-        <Button onClick={handleSubmit}>{SIGNIN_LABEL}</Button>
-        <Button onClick={() => navigate("/register")} className="signup">
-          {SIGNUP_LABEL}
-        </Button>
+        <div className="d-flex justify-content-center">
+          <Button onClick={handleSubmit}>{SUBMIT_LABEL}</Button>
+        </div>
       </Form>
+      <div>
+        {error && <p className="error">{INVALID_USERNAME}</p>}
+        {success && <p className="success">{SIGNUP_SUCCESS_MESSAGE}</p>}
+      </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUpComponent;

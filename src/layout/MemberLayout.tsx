@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from "react";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
-const AdminLayout = (props: PropsWithChildren) => {
+const MemberLayout = (props: PropsWithChildren) => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const AdminLayout = (props: PropsWithChildren) => {
   );
 };
 
-export default AdminLayout;
+export default MemberLayout;
