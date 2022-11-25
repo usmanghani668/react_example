@@ -6,7 +6,7 @@ export const SIGNIN_LABEL = "Sign In";
 export const SIGNUP_LABEL = "Sign Up";
 export const SUBMIT_LABEL = "Submit";
 export const LOGOUT_LABEL = "Logout";
-export const EXAMPLE_LABEL = "Hello World Example App!";
+export const EXAMPLE_LABEL = "Example App!";
 export const INCREMENT_LABEL = "Increment";
 export const DECREMENT_LABEL = "Decrement";
 

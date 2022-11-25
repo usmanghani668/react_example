@@ -7,7 +7,6 @@ const AdminLayout = (props: PropsWithChildren) => {
   return (
     <>
       <Header />
-      asas
       <Outlet />
       <Footer />
     </>
