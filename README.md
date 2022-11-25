@@ -1,9 +1,16 @@
-### Folder Structure
+### RBAC based Applicatioon
+Baisc application which handles RBAC with authentication.This Apllication will not allow Admin to visit Dashboard unless he/she is loggedin.
 
+
+###Auth
+Username: admin
+password : 12345678
+
+### Folder Structure
 1. Components
    - components which are used in pages.
 2. Layout
-   - To segrigate UI on the basis of role.
+   - To segregate UI on the basis of role.
 3. Pages
    - Multiple Views which will be used in a Layout.
 4. Redux
