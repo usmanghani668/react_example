@@ -1,7 +1,7 @@
 ### Folder Structure
 
 1. Components
-   Common and components which are used in pages.
+   - Common and components which are used in pages.
 2. Layout
    To segrigate UI on the basis of role.
 3. Pages
