@@ -1,17 +1,17 @@
 ### Folder Structure
 
 1. Components
-   - Common and components which are used in pages.
+   - components which are used in pages.
 2. Layout
-   To segrigate UI on the basis of role.
+   - To segrigate UI on the basis of role.
 3. Pages
-   Multiple Views which will be used in a Layout.
+   - Multiple Views which will be used in a Layout.
 4. Redux
-   A central store (used slices).
+   - A central store (used slices).
 5. Routes
-   Navigation of the application also enabled with protection.
+   - Navigation of the application also enabled with protection.
 6. Utils
-   Utility functions and constants.
+   - Utility functions and constants.
 
 ### `npm install`
 
