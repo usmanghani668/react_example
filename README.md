@@ -3,16 +3,18 @@ Baisc application which handles RBAC with authentication.This Apllication will n
 
 
 ###Auth
-Username: admin
-password : 12345678
+   - Username: admin
+   - password : 12345678
 
 ### Folder Structure
+- We used index based naming convention so folder holding components are in Pascal rest are in camel case.
+
 1. Components
    - components which are used in pages.
 2. Layout
    - To segregate UI on the basis of role.
 3. Pages
-   - Multiple Views which will be used in a Layout.
+   - Multiple Views which will be used in a Layout. (Pages are also known as Screens) 
 4. Redux
    - A central store (used slices).
 5. Routes
